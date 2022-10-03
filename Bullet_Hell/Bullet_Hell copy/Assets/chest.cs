@@ -2,14 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
-[System.Serializable]
 
-public class itemToSpawn
-{
-    public GameObject item;
-    public float spawnRate;
-    [HideInInspector] public float minSpawnProb, maxSpawnProb;
-}
+
+
 
 public class chest : MonoBehaviour
 {
@@ -19,9 +14,9 @@ public class chest : MonoBehaviour
 
     public Transform landPos;
 
-    public itemToSpawn[] itemToSpawn;
+    public WeightedRandomList<GameObject> lootTable;
 
- 
+
 
     private void Start()
     {
@@ -43,21 +38,6 @@ public class chest : MonoBehaviour
             }
         }
 
-        for (int i = 0; i < itemToSpawn.Length; i++)
-        {
-            if(i == 0)
-            {
-                itemToSpawn[i].minSpawnProb = 0;
-                itemToSpawn[i].maxSpawnProb = itemToSpawn[i].spawnRate - 1;
-            }
-            else
-            {
-                itemToSpawn[i].minSpawnProb = itemToSpawn[i -1].maxSpawnProb + 1;
-                itemToSpawn[i].minSpawnProb = itemToSpawn[i].minSpawnProb + itemToSpawn[i].spawnRate;
-
-
-            }
-        }
     }
 
 
@@ -88,22 +68,8 @@ public class chest : MonoBehaviour
 
     public void Spawner()
     {
-        float randomNum = Random.Range(0, 100);
-
-        for (int i = 0; i < itemToSpawn.Length; i++)
-        {
-            if (randomNum >= itemToSpawn[i].minSpawnProb && randomNum <= itemToSpawn[i].maxSpawnProb)
-            {
-                GameObject item = Instantiate(itemToSpawn[i].item, transform.position, Quaternion.identity);
-                item.transform.DOMove(landPos.position, 1).SetEase(Ease.OutBounce);
-                break;
-            }
-
-
-        }
-
-        /*GameObject item = Instantiate(itemToSpawn[0].item, transform.position, Quaternion.identity);
-        item.transform.DOMove(landPos.position, 1).SetEase(Ease.OutBounce);*/
+        GameObject obj = Instantiate(lootTable.GetRandom(), transform.position, transform.rotation);
+        obj.transform.DOMove(landPos.position, 1f).SetEase(Ease.OutQuad);
     }
 
 }

@@ -50,6 +50,10 @@ public class addWeapon : MonoBehaviour
             {
                 weaponWheelController.instance.robotarmUnlocked = true;
             }
+            else if (minigun)
+            {
+                weaponWheelController.instance.minigunUnlocked = true;
+            }
 
             Destroy(gameObject);
         }

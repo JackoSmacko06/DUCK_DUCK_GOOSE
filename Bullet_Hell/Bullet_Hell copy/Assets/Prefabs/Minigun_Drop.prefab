@@ -152,7 +152,7 @@ MonoBehaviour:
   shotgun: 0
   machinePistol: 0
   robotArm: 0
-  minigun: 0
+  minigun: 1
 --- !u!1 &2073837944953349478
 GameObject:
   m_ObjectHideFlags: 0
