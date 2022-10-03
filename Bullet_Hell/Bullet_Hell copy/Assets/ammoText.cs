@@ -45,7 +45,11 @@ public class ammoText : MonoBehaviour
             }
             else if (weaponWheelController.weaponID == 6)
             {
-
+                text.text = $"{weapon.machinePistol.GetComponent<Weapon>().currentClip} | {weapon.machinePistol.GetComponent<Weapon>().maxClipSize}";
+            }
+            else if (weaponWheelController.weaponID == 7)
+            {
+                text.text = $"{weapon.minigun.GetComponent<Weapon>().currentClip} | {weapon.minigun.GetComponent<Weapon>().maxClipSize}";
             }
         }
         else if (ammo)

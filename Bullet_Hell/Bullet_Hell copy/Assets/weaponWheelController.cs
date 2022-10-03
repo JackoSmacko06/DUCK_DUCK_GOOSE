@@ -33,15 +33,17 @@ public class weaponWheelController : MonoBehaviour
     public bool starter;
 
     public bool pistolUnlocked = true;
-    public bool pistolUsed;
+    [HideInInspector] public bool pistolUsed;
     public bool smgUnlocked;
-    public bool smgUsed;
+    [HideInInspector] public bool smgUsed;
     public bool shotgunUnlocked;
-    public bool shotgunUsed;
+    [HideInInspector] public bool shotgunUsed;
     public bool robotarmUnlocked;
-    public bool robotArmUsed;
+    [HideInInspector] public bool robotArmUsed;
     public bool machinePistolUnlocked;
-    public bool machinePistolUsed;
+    [HideInInspector] public bool machinePistolUsed;
+    public bool minigunUnlocked;
+    [HideInInspector] public bool minigunUsed;
 
 
     void Start()
@@ -129,6 +131,7 @@ public class weaponWheelController : MonoBehaviour
                 slot1.GetComponent<weaponWheelButton>().itemName = "";
                 slot1Free = true;
                 slot1.GetComponent<weaponWheelButton>().pistolSelected = false;
+                slot1.GetComponent<weaponWheelButton>().pistol.SetActive(false);
             }
             else if (slot2Free)
             {
@@ -137,6 +140,7 @@ public class weaponWheelController : MonoBehaviour
                 slot2.GetComponent<weaponWheelButton>().itemName = "";
                 slot2Free = true;
                 slot2.GetComponent<weaponWheelButton>().pistolSelected = false;
+                slot2.GetComponent<weaponWheelButton>().pistol.SetActive(false);
             }
             else if (slot3Free)
             {
@@ -144,7 +148,8 @@ public class weaponWheelController : MonoBehaviour
                 slot3.GetComponent<weaponWheelButton>().id = 0;
                 slot3.GetComponent<weaponWheelButton>().itemName = "";
                 slot3Free = true;
-                slot2.GetComponent<weaponWheelButton>().pistolSelected = false;
+                slot3.GetComponent<weaponWheelButton>().pistolSelected = false;
+                slot3.GetComponent<weaponWheelButton>().pistol.SetActive(false);
             }
             else if (slot4Free)
             {
@@ -152,7 +157,8 @@ public class weaponWheelController : MonoBehaviour
                 slot4.GetComponent<weaponWheelButton>().id = 0;
                 slot4.GetComponent<weaponWheelButton>().itemName = "";
                 slot4Free = true;
-                slot2.GetComponent<weaponWheelButton>().pistolSelected = false;
+                slot4.GetComponent<weaponWheelButton>().pistolSelected = false;
+                slot4.GetComponent<weaponWheelButton>().pistol.SetActive(false);
             }
         }
 
@@ -204,6 +210,7 @@ public class weaponWheelController : MonoBehaviour
                 slot1.GetComponent<weaponWheelButton>().itemName = "";
                 slot1Free = true;
                 slot1.GetComponent<weaponWheelButton>().smgSelected = false;
+                slot1.GetComponent<weaponWheelButton>().smg.SetActive(false);
             }
             else if (slot2Free)
             {
@@ -212,6 +219,7 @@ public class weaponWheelController : MonoBehaviour
                 slot2.GetComponent<weaponWheelButton>().itemName = "";
                 slot2Free = true;
                 slot2.GetComponent<weaponWheelButton>().smgSelected = false;
+                slot2.GetComponent<weaponWheelButton>().smg.SetActive(false);
             }
             else if (slot3Free)
             {
@@ -219,7 +227,8 @@ public class weaponWheelController : MonoBehaviour
                 slot3.GetComponent<weaponWheelButton>().id = 0;
                 slot3.GetComponent<weaponWheelButton>().itemName = "";
                 slot3Free = true;
-                slot2.GetComponent<weaponWheelButton>().smgSelected = false;
+                slot3.GetComponent<weaponWheelButton>().smgSelected = false;
+                slot3.GetComponent<weaponWheelButton>().smg.SetActive(false);
             }
             else if (slot4Free)
             {
@@ -227,7 +236,8 @@ public class weaponWheelController : MonoBehaviour
                 slot4.GetComponent<weaponWheelButton>().id = 0;
                 slot4.GetComponent<weaponWheelButton>().itemName = "";
                 slot4Free = true;
-                slot2.GetComponent<weaponWheelButton>().smgSelected = false;
+                slot4.GetComponent<weaponWheelButton>().smgSelected = false;
+                slot4.GetComponent<weaponWheelButton>().smg.SetActive(false);
             }
         }
 
@@ -254,7 +264,7 @@ public class weaponWheelController : MonoBehaviour
             else if (slot3Free)
             {
                 slot3.GetComponent<Button>().interactable = true;
-                slot4.GetComponent<weaponWheelButton>().shotgunSelected = true;
+                slot3.GetComponent<weaponWheelButton>().shotgunSelected = true;
                 slot3.GetComponent<weaponWheelButton>().id = 4;
                 slot3.GetComponent<weaponWheelButton>().itemName = "Shotgun";
                 slot3Free = false;
@@ -279,6 +289,7 @@ public class weaponWheelController : MonoBehaviour
                 slot1.GetComponent<weaponWheelButton>().itemName = "";
                 slot1Free = true;
                 slot1.GetComponent<weaponWheelButton>().shotgunSelected = false;
+                slot1.GetComponent<weaponWheelButton>().shotgun.SetActive(false);
             }
             else if (slot2Free)
             {
@@ -287,6 +298,7 @@ public class weaponWheelController : MonoBehaviour
                 slot2.GetComponent<weaponWheelButton>().itemName = "";
                 slot2Free = true;
                 slot2.GetComponent<weaponWheelButton>().shotgunSelected = false;
+                slot2.GetComponent<weaponWheelButton>().shotgun.SetActive(false);
             }
             else if (slot3Free)
             {
@@ -295,6 +307,7 @@ public class weaponWheelController : MonoBehaviour
                 slot3.GetComponent<weaponWheelButton>().itemName = "";
                 slot3Free = true;
                 slot3.GetComponent<weaponWheelButton>().shotgunSelected = false;
+                slot3.GetComponent<weaponWheelButton>().shotgun.SetActive(false);
             }
             else if (slot4Free)
             {
@@ -303,6 +316,7 @@ public class weaponWheelController : MonoBehaviour
                 slot4.GetComponent<weaponWheelButton>().itemName = "";
                 slot4Free = true;
                 slot4.GetComponent<weaponWheelButton>().shotgunSelected = false;
+                slot4.GetComponent<weaponWheelButton>().shotgun.SetActive(false);
             }
         }
 
@@ -316,6 +330,7 @@ public class weaponWheelController : MonoBehaviour
                 slot1.GetComponent<weaponWheelButton>().itemName = "Severed Robot Arm";
                 slot1Free = false;
                 robotArmUsed = true;
+                
             }
             else if (slot2Free)
             {
@@ -325,6 +340,7 @@ public class weaponWheelController : MonoBehaviour
                 slot2.GetComponent<weaponWheelButton>().itemName = "Severed Robot Arm";
                 slot2Free = false;
                 robotArmUsed = true;
+
             }
             else if (slot3Free)
             {
@@ -354,6 +370,7 @@ public class weaponWheelController : MonoBehaviour
                 slot1.GetComponent<weaponWheelButton>().itemName = "";
                 slot1Free = true;
                 slot1.GetComponent<weaponWheelButton>().robotArmSelected = false;
+                slot1.GetComponent<weaponWheelButton>().robotArm.SetActive(false);
             }
             else if (slot2Free)
             {
@@ -362,6 +379,7 @@ public class weaponWheelController : MonoBehaviour
                 slot2.GetComponent<weaponWheelButton>().itemName = "";
                 slot2Free = true;
                 slot2.GetComponent<weaponWheelButton>().robotArmSelected = false;
+                slot2.GetComponent<weaponWheelButton>().robotArm.SetActive(false);
             }
             else if (slot3Free)
             {
@@ -370,6 +388,7 @@ public class weaponWheelController : MonoBehaviour
                 slot3.GetComponent<weaponWheelButton>().itemName = "";
                 slot3Free = true;
                 slot3.GetComponent<weaponWheelButton>().robotArmSelected = false;
+                slot3.GetComponent<weaponWheelButton>().robotArm.SetActive(false);
             }
             else if (slot4Free)
             {
@@ -378,6 +397,7 @@ public class weaponWheelController : MonoBehaviour
                 slot4.GetComponent<weaponWheelButton>().itemName = "";
                 slot4Free = true;
                 slot4.GetComponent<weaponWheelButton>().robotArmSelected = false;
+                slot4.GetComponent<weaponWheelButton>().robotArm.SetActive(false);
             }
         }
 
@@ -391,6 +411,8 @@ public class weaponWheelController : MonoBehaviour
                 slot1.GetComponent<weaponWheelButton>().itemName = "Machine Pistol";
                 slot1Free = false;
                 machinePistolUsed = true;
+                
+
             }
             else if (slot2Free)
             {
@@ -429,6 +451,7 @@ public class weaponWheelController : MonoBehaviour
                 slot1.GetComponent<weaponWheelButton>().itemName = "";
                 slot1Free = true;
                 slot1.GetComponent<weaponWheelButton>().machinePistolSelected = false;
+                slot1.GetComponent<weaponWheelButton>().machinePistol.SetActive(false);
             }
             else if (slot2Free)
             {
@@ -436,7 +459,8 @@ public class weaponWheelController : MonoBehaviour
                 slot2.GetComponent<weaponWheelButton>().id = 0;
                 slot2.GetComponent<weaponWheelButton>().itemName = "";
                 slot2Free = true;
-                slot3.GetComponent<weaponWheelButton>().machinePistolSelected = false;
+                slot2.GetComponent<weaponWheelButton>().machinePistolSelected = false;
+                slot2.GetComponent<weaponWheelButton>().machinePistol.SetActive(false);
             }
             else if (slot3Free)
             {
@@ -445,6 +469,7 @@ public class weaponWheelController : MonoBehaviour
                 slot3.GetComponent<weaponWheelButton>().id = 0;
                 slot3.GetComponent<weaponWheelButton>().itemName = "";
                 slot3Free = true;
+                slot3.GetComponent<weaponWheelButton>().machinePistol.SetActive(false);
             }
             else if (slot4Free)
             {
@@ -453,6 +478,87 @@ public class weaponWheelController : MonoBehaviour
                 slot4.GetComponent<weaponWheelButton>().id = 0;
                 slot4.GetComponent<weaponWheelButton>().itemName = "";
                 slot4Free = true;
+                slot4.GetComponent<weaponWheelButton>().machinePistol.SetActive(false);
+            }
+        }
+
+        if (minigunUnlocked && !minigunUsed)
+        {
+            if (slot1Free)
+            {
+                slot1.GetComponent<Button>().interactable = true;
+                slot1.GetComponent<weaponWheelButton>().minigunSelected = true;
+                slot1.GetComponent<weaponWheelButton>().id = 7;
+                slot1.GetComponent<weaponWheelButton>().itemName = "Minigun";
+                slot1Free = false;
+                minigunUsed = true;
+                
+            }
+            else if (slot2Free)
+            {
+                slot2.GetComponent<Button>().interactable = true;
+                slot2.GetComponent<weaponWheelButton>().minigunSelected = true;
+                slot2.GetComponent<weaponWheelButton>().id = 7;
+                slot2.GetComponent<weaponWheelButton>().itemName = "Minigun";
+                slot2Free = false;
+                minigunUsed = true;
+            }
+            else if (slot3Free)
+            {
+                slot3.GetComponent<Button>().interactable = true;
+                slot3.GetComponent<weaponWheelButton>().minigunSelected = true;
+                slot3.GetComponent<weaponWheelButton>().id = 7;
+                slot3.GetComponent<weaponWheelButton>().itemName = "Minigun";
+                slot3Free = false;
+                minigunUsed = true;
+            }
+            else if (slot4Free)
+            {
+                slot4.GetComponent<Button>().interactable = true;
+                slot4.GetComponent<weaponWheelButton>().minigunSelected = true;
+                slot4.GetComponent<weaponWheelButton>().id = 7;
+                slot4.GetComponent<weaponWheelButton>().itemName = "Minigun";
+                slot4Free = false;
+                minigunUsed = true;
+            }
+        }
+        else if (!minigunUnlocked || minigunUsed)
+        {
+            if (slot1Free)
+            {
+                slot1.GetComponent<Button>().interactable = false;
+                slot1.GetComponent<weaponWheelButton>().id = 0;
+                slot1.GetComponent<weaponWheelButton>().itemName = "";
+                slot1Free = true;
+                slot1.GetComponent<weaponWheelButton>().minigunSelected = false;
+                slot1.GetComponent<weaponWheelButton>().minigun.SetActive(false);
+            }
+            else if (slot2Free)
+            {
+                slot2.GetComponent<Button>().interactable = false;
+                slot2.GetComponent<weaponWheelButton>().id = 0;
+                slot2.GetComponent<weaponWheelButton>().itemName = "";
+                slot2Free = true;
+                slot2.GetComponent<weaponWheelButton>().minigunSelected = false;
+                slot2.GetComponent<weaponWheelButton>().minigun.SetActive(false);
+            }
+            else if (slot3Free)
+            {
+                slot3.GetComponent<Button>().interactable = false;
+                slot3.GetComponent<weaponWheelButton>().minigunSelected = false;
+                slot3.GetComponent<weaponWheelButton>().id = 0;
+                slot3.GetComponent<weaponWheelButton>().itemName = "";
+                slot3Free = true;
+                slot3.GetComponent<weaponWheelButton>().minigun.SetActive(false);
+            }
+            else if (slot4Free)
+            {
+                slot4.GetComponent<Button>().interactable = false;
+                slot4.GetComponent<weaponWheelButton>().minigunSelected = false;
+                slot4.GetComponent<weaponWheelButton>().id = 0;
+                slot4.GetComponent<weaponWheelButton>().itemName = "";
+                slot4Free = true;
+                slot4.GetComponent<weaponWheelButton>().minigun.SetActive(false);
             }
         }
 
@@ -488,6 +594,7 @@ public class weaponWheelController : MonoBehaviour
                 weaponSwitcher.instance.shotgun.SetActive(false);
                 weaponSwitcher.instance.robotArm.SetActive(false);
                 weaponSwitcher.instance.machinePistol.SetActive(false);
+                weaponSwitcher.instance.minigun.SetActive(false);
 
                 break;
             case 3: //SMG
@@ -498,6 +605,7 @@ public class weaponWheelController : MonoBehaviour
                 weaponSwitcher.instance.shotgun.SetActive(false);
                 weaponSwitcher.instance.robotArm.SetActive(false);
                 weaponSwitcher.instance.machinePistol.SetActive(false);
+                weaponSwitcher.instance.minigun.SetActive(false);
 
                 break;
             case 4: //Shotgun
@@ -508,6 +616,7 @@ public class weaponWheelController : MonoBehaviour
                 weaponSwitcher.instance.pistol.SetActive(false);
                 weaponSwitcher.instance.robotArm.SetActive(false);
                 weaponSwitcher.instance.machinePistol.SetActive(false);
+                weaponSwitcher.instance.minigun.SetActive(false);
 
                 break;
             case 5: //Severed Robot Arm
@@ -518,6 +627,7 @@ public class weaponWheelController : MonoBehaviour
                 weaponSwitcher.instance.pistol.SetActive(false);
                 weaponSwitcher.instance.shotgun.SetActive(false);
                 weaponSwitcher.instance.machinePistol.SetActive(false);
+                weaponSwitcher.instance.minigun.SetActive(false);
 
                 break;
             case 6: //Machine Pistol
@@ -528,10 +638,19 @@ public class weaponWheelController : MonoBehaviour
                 weaponSwitcher.instance.pistol.SetActive(false);
                 weaponSwitcher.instance.shotgun.SetActive(false);
                 weaponSwitcher.instance.robotArm.SetActive(false);
+                weaponSwitcher.instance.minigun.SetActive(false);
 
                 break;
-            case 7: //6
-                ;
+            case 7: //Mini gun
+                weaponSwitcher.instance.minigun.SetActive(true);
+                weaponWheelButton.instance.button.interactable = true;
+
+                weaponSwitcher.instance.machinePistol.SetActive(false);
+                weaponSwitcher.instance.SMG.SetActive(false);
+                weaponSwitcher.instance.pistol.SetActive(false);
+                weaponSwitcher.instance.shotgun.SetActive(false);
+                weaponSwitcher.instance.robotArm.SetActive(false);
+
                 break;
             case 8: //7
                 

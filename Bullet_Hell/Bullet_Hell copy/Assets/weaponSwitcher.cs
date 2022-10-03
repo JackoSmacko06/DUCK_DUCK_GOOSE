@@ -26,6 +26,7 @@ public class weaponSwitcher : MonoBehaviour
     public GameObject slapHand;
     public GameObject robotArm;
     public GameObject machinePistol;
+    public GameObject minigun;
 
     private void Start()
     {
@@ -127,6 +128,10 @@ public class weaponSwitcher : MonoBehaviour
     public void addmachinePistol()
     {
         weaponWheelController.instance.machinePistolUnlocked = true;
+    }
+    public void addMinigun()
+    {
+        weaponWheelController.instance.minigunUnlocked = true;
     }
 
     IEnumerator wait(float time)

@@ -22,17 +22,19 @@ public class weaponWheelButton : MonoBehaviour
     public Sprite none;
     [HideInInspector] public Button button;
 
-    public bool pistolSelected;
-    public bool smgSelected;
-    public bool shotgunSelected;
-    public bool robotArmSelected;
-    public bool machinePistolSelected;
+    [HideInInspector] public bool pistolSelected;
+    [HideInInspector] public bool smgSelected;
+    [HideInInspector] public bool shotgunSelected;
+    [HideInInspector] public bool robotArmSelected;
+    [HideInInspector] public bool machinePistolSelected;
+    [HideInInspector] public bool minigunSelected;
 
     public GameObject pistol;
     public GameObject smg;
     public GameObject shotgun;
     public GameObject robotArm;
     public GameObject machinePistol;
+    public GameObject minigun;
 
     public bool slot1;
     public bool slot2;
@@ -63,6 +65,7 @@ public class weaponWheelButton : MonoBehaviour
             shotgun.SetActive(false);
             robotArm.SetActive(false);
             machinePistol.SetActive(false);
+            minigun.SetActive(false);
         }
         else if (smgSelected)
         {
@@ -71,6 +74,7 @@ public class weaponWheelButton : MonoBehaviour
             shotgun.SetActive(false);
             robotArm.SetActive(false);
             machinePistol.SetActive(false);
+            minigun.SetActive(false);
         }
         else if (shotgunSelected)
         {
@@ -79,6 +83,7 @@ public class weaponWheelButton : MonoBehaviour
             shotgun.SetActive(true);
             robotArm.SetActive(false);
             machinePistol.SetActive(false);
+            minigun.SetActive(false);
         }
         else if (robotArmSelected)
         {
@@ -87,6 +92,7 @@ public class weaponWheelButton : MonoBehaviour
             shotgun.SetActive(false);
             robotArm.SetActive(true);
             machinePistol.SetActive(false);
+            minigun.SetActive(false);
         }
         else if (machinePistolSelected)
         {
@@ -95,6 +101,16 @@ public class weaponWheelButton : MonoBehaviour
             shotgun.SetActive(false);
             robotArm.SetActive(false);
             machinePistol.SetActive(true);
+            minigun.SetActive(false);
+        }
+        else if (minigunSelected)
+        {
+            pistol.SetActive(false);
+            smg.SetActive(false);
+            shotgun.SetActive(false);
+            robotArm.SetActive(false);
+            machinePistol.SetActive(false);
+            minigun.SetActive(true);
         }
     }
 

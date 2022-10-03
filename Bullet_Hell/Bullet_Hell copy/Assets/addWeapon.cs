@@ -10,6 +10,7 @@ public class addWeapon : MonoBehaviour
     public bool shotgun;
     public bool machinePistol;
     public bool robotArm;
+    public bool minigun;
 
     private BoxCollider2D col;
 
